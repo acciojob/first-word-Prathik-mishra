@@ -1,14 +1,20 @@
 function firstWord(s) {
-  // your code here
-	     let trimmed = s.trimStart();
-	let spaceIndex = trimmed.indexOf(' ');
- 
-  if (spaceIndex === -1) {
-    return trimmed;
-  }
+   s = s.trim();
 	
-  return trimmed.slice(0, spaceIndex);    
+	if ((s.startsWith('"') && s.endsWith('"')) ||
+      (s.startsWith("'") && s.endsWith("'"))) {
+    s = s.substring(1, s.length - 1);
   }
+	s = s.trim();
+
+	let spaceIndex = s.indexOf(' ');
+
+	if (spaceIndex === -1) {
+    return '"' + s + '"';
+  }
+  
+	let first = s.substring(0, spaceIndex);
+  return "'" + first + "'";
 }
 // Do not change the code below
 
