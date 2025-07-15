@@ -10,7 +10,7 @@ function firstWord(s) {
 	let spaceIndex = s.indexOf(' ');
 
 	if (spaceIndex === -1) {
-    return '"' + s + '"';
+    return "''" + s + "''";
   }
   
 	let first = s.substring(0, spaceIndex);
