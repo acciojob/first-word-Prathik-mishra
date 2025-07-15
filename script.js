@@ -1,7 +1,11 @@
 function firstWord(s) {
   // your code here
-	   s = s.split(" ")[0];
-        return s;
+	    if(s.includes(' ') ){
+            return s.split(" ")[0];
+        }
+        else{
+            return s;
+        }
 }
 // Do not change the code below
 
